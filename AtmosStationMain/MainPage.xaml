@@ -1,0 +1,82 @@
+﻿<Page
+    x:Class="AtmosStationMain.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:AtmosStationMain"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    MinWidth="1000"
+    
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition  MinWidth="400" Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <Grid Grid.Column="0" >
+            <!-- Lets make some rows -->
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+                <RowDefinition Height="*"></RowDefinition>
+            </Grid.RowDefinitions>
+
+            <Grid Grid.Row="2" Grid.Column="0">
+                <TextBlock x:Name="titleMain" Text="Login" FontFamily="Times New Roman" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center"></TextBlock>
+            </Grid>
+            
+            <!-- Grid holding the username and password-->
+            <Grid Grid.Row="3">
+
+                <Grid.RowDefinitions>
+                    <RowDefinition ></RowDefinition>
+                    <RowDefinition ></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <!-- User ID-->
+                <TextBox x:Name="userIDTxt"  Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Height="40" Visibility="Visible" RequestedTheme="Default" Margin="20,0,20,0" FontSize="18" PlaceholderText="UserName"/>
+
+                <!-- User Password-->
+                <PasswordBox x:Name="userPassTxt"  Grid.Row="1" Grid.Column="1" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"  Height="40" Visibility="Visible" RequestedTheme="Default" Margin="20,0,20,0" PlaceholderText="Password" FontSize="18"/>
+
+            </Grid>
+
+            <!-- Login button -->
+            <Button x:Name="MainBtn" Grid.Row="4" VerticalAlignment="Stretch" Margin="20" Background="#FF003AFF" Foreground="White"  Content="Login" HorizontalAlignment="Stretch" Height="80" Click="ButtonManager" FontSize="20" />
+
+            <!-- Grid holding the sign up button-->
+            <Grid Grid.Row="5" >
+                <Grid.RowDefinitions>
+                    <RowDefinition ></RowDefinition>
+                    <RowDefinition ></RowDefinition>
+                </Grid.RowDefinitions>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*"/>
+                    <ColumnDefinition Width="*"/>
+     
+                </Grid.ColumnDefinitions>
+
+                <!-- Sign up Button-->
+                <Button x:Name="ShowBtn" Content="Sign Up" Background="White" Foreground="Black" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch"  VerticalAlignment="Center"  Margin="20,0,20,0"  Click="ButtonManager" FontSize="15"   />
+
+            </Grid>
+        </Grid>
+
+        <Grid Grid.Column="1" Grid.ColumnSpan="2">
+            <Grid.Background>
+                <ImageBrush ImageSource="/Assets/Logo/AtmosLogo.png"/>
+            </Grid.Background>
+        </Grid>
+        
+    </Grid>
+</Page>
